@@ -38,7 +38,7 @@ var baseConfig = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'style.css'
+      filename: '../style.css'
     }),
     new CopyWebpackPlugin([
       {
