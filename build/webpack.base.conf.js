@@ -44,13 +44,13 @@ var baseConfig = {
       {
         from: path.join(config.themeSrc, 'assets/images'),
         to: 'images',
-        ignore: ['.*']
+        ignore: ['.*', 'Thumbs.db']
       },
       {
         from: path.join(config.themeSrc, '*'),
         to: '../',
         flatten: true,
-        ignore: ['.*']
+        ignore: ['.*', 'Thumbs.db']
       }
     ])
   ]
