@@ -18,7 +18,11 @@ var config = {
   host: 'localhost',
   port: 3000,
   proxy: 'localhost:8080',
-  autoOpenBrowser: true
+  autoOpenBrowser: true,
+  cssnano: {
+    safe: true,
+    discardComments: false
+  }
 }
 
 module.exports = config

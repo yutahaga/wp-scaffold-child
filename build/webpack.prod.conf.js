@@ -3,7 +3,6 @@ var path = require('path')
 var merge = require('webpack-merge')
 var webpack = require('webpack')
 var baseWebpackConfig = require('./webpack.base.conf')
-var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var ImageminPlugin = require('imagemin-webpack-plugin').default
 
 var webpackConfig = merge(baseWebpackConfig, {
@@ -13,11 +12,6 @@ var webpackConfig = merge(baseWebpackConfig, {
         warnings: false
       },
       sourceMap: config.sourceMap
-    }),
-    new OptimizeCSSPlugin({
-      cssProcessorOptions: {
-        safe: true
-      }
     }),
     new ImageminPlugin({
       test: path.posix.resolve(path.join(config.themeSrc, '**')),

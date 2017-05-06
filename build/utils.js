@@ -1,5 +1,7 @@
 var pkg = require('../package.json')
+var config = require('./config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var isProduction = process.env.NODE_ENV === 'production'
 
 exports.cssLoaders = function (options) {
   options = options || {}
@@ -7,7 +9,7 @@ exports.cssLoaders = function (options) {
   var cssLoader = {
     loader: 'css-loader',
     options: {
-      minimize: process.env.NODE_ENV === 'production',
+      minimize: isProduction ? config.cssnano : false,
       sourceMap: options.sourceMap
     }
   }
