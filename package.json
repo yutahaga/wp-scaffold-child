@@ -1,12 +1,18 @@
 {
   "name": "wp-scaffold",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "author": "Yuta Haga <yutahaga7@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "wp-init": "sh build/wp-init.sh",
     "dev": "cross-env NODE_ENV=development node build/build.js",
-    "build": "cross-env NODE_ENV=production node build/build.js"
+    "build": "cross-env NODE_ENV=production node build/build.js",
+    "serve": "docker-compose -f docker/docker-compose.yml up --build -d",
+    "serve-stop": "docker-compose -f docker/docker-compose.yml stop",
+    "serve-restart": "docker-compose -f docker/docker-compose.yml restart",
+    "serve-down": "docker-compose -f docker/docker-compose.yml down",
+    "wordmove": "docker exec wp_php wordmove"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",

@@ -1,41 +1,5 @@
 ### Wordpress
-
-/public_html/wp/index.php
-/public_html/wp/wp-activate.php
-/public_html/wp/wp-comments-post.php
-/public_html/wp/wp-config.php
-/public_html/wp/wp-config.*.php
-/public_html/wp/wp-cron.php
-/public_html/wp/wp-links-opml.php
-/public_html/wp/wp-load.php
-/public_html/wp/wp-login.php
-/public_html/wp/wp-mail.php
-/public_html/wp/wp-settings.php
-/public_html/wp/wp-signup.php
-/public_html/wp/wp-trackback.php
-/public_html/wp/xmlrpc.php
-/public_html/wp/wp-admin
-/public_html/wp/wp-includes
-/public_html/wp/wp-content/advanced-cache.php
-/public_html/wp/wp-content/backup-db/
-/public_html/wp/wp-content/backups/
-/public_html/wp/wp-content/blogs.dir/
-/public_html/wp/wp-content/cache/
-/public_html/wp/wp-content/upgrade/
-/public_html/wp/wp-content/uploads/
-/public_html/wp/wp-content/wp-cache-config.php
-/public_html/wp/wp-content/plugins/hello.php
-/public_html/wp/wp-content/plugins/index.php
-/public_html/wp/wp-content/themes/twentyfifteen
-/public_html/wp/wp-content/themes/twentysixteen
-/public_html/wp/wp-content/themes/twentyseventeen
-
-.htaccess
-.htaccess.*
-/public_html/wp/license.txt
-/public_html/wp/readme.html
-/public_html/wp/sitemap.xml
-/public_html/wp/sitemap.xml.gz
+/public
 
 ### Node
 
@@ -97,3 +61,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Docker
+.data/

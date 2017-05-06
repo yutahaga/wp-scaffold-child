@@ -9,7 +9,7 @@ function resolve (file) {
 }
 
 var config = {
-  themeRoot: resolve('public_html/wp/wp-content/themes', themeName),
+  themeRoot: resolve('public/wp/wp-content/themes', themeName),
   themeSrc: resolve('src', themeName),
   sourceMap: !isProduction,
   gzip: isProduction,

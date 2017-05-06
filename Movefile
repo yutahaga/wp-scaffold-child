@@ -1,0 +1,38 @@
+local:
+  vhost: "http://localhost:8080"
+  wordpress_path: "/var/www/html"
+
+  database:
+    name: "wordpress"
+    user: "wordpress"
+    password: "wordpress"
+    host: "db"
+    charset: "utf8"
+
+production:
+  vhost: "http://example.com"
+  wordpress_path: "/var/www/html"
+
+  database:
+    name: "database_name"
+    user: "user"
+    password: "password"
+    host: "host"
+    # port: "3306" # Use just in case you have exotic server config
+    # mysqldump_options: "--max_allowed_packet=50MB" # Only available if using SSH
+
+  exclude:
+    - ".git/"
+    - ".gitignore"
+    - ".sass-cache/"
+    - "bin/"
+    - "tmp/*"
+    - "Gemfile*"
+    - "Movefile"
+    - "wp-content/*.sql"
+
+  ssh:
+    host: "host"
+    user: "user"
+    # port: 22
+    # rsync_options: --verbose
