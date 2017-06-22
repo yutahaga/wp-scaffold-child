@@ -15,7 +15,7 @@ services:
     build: ./php-fpm
     volumes:
       - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
-      - ../Movefile:/Movefile
+      - ../Movefile:/root/Movefile
       - ./.data/php:/var/log/php
       - ../public:/var/www/html
 

@@ -18,6 +18,10 @@ var baseConfig = {
       '@': path.join(config.themeSrc, 'assets')
     }
   },
+  externals: {
+    jquery: 'jQuery',
+    google: 'google'
+  },
   module: {
     rules: [
       {
@@ -33,6 +37,13 @@ var baseConfig = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: config.themeSrc
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       }
     ]
   },
@@ -50,7 +61,7 @@ var baseConfig = {
         from: path.join(config.themeSrc, '*'),
         to: '../',
         flatten: true,
-        ignore: ['.*', 'Thumbs.db']
+        ignore: ['.*']
       }
     ])
   ]

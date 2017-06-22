@@ -1,0 +1,39 @@
+{
+    "name": "yutahaga/wp-scaffold",
+    "type": "wordpress-theme",
+    "description": "WordPress theme with a modern development workflow",
+    "authors": [
+        {
+            "name": "Yuta Haga",
+            "email": "yutahaga7@gmail.com",
+            "homepage": "https://github.com/yutahaga"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "keywords": [
+        "wordpress"
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "composer/installers": "~1.0",
+        "wp-cli/wp-cli": "^1.2",
+    },
+    "extra": {
+        "installer-paths": {
+            "../../plugins/{$name}": [
+                "type:wordpress-plugin"
+            ]
+        },
+        "wordpress-install-dir": "../../../"
+    },
+    "scripts": {
+        "test": [
+            "phpcs"
+        ]
+    }
+}

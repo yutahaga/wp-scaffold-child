@@ -1,5 +1,5 @@
-# wp-scaffold
-WordPress でのサイト開発用テンプレートです。
+# wp-scaffold-child
+WordPress + 子テーマなサイト開発用テンプレートです。
 
 ## Feature
 
@@ -15,7 +15,7 @@ WordPress でのサイト開発用テンプレートです。
 ## Initialize
 
 ```sh
-curl -LOk https://github.com/yutahaga/wp-scaffold/archive/master.zip
+curl -LOk https://github.com/yutahaga/wp-scaffold-child/archive/master.zip
 unzip master.zip
 mv wp-scaffold-master your-site-name
 cd your-site-name
@@ -41,13 +41,22 @@ BrowserSync が変更をキャッチしてブラウザをリロードします�
 
 ## Deploy
 `public/` がドキュメントルートになります。
-`public/` をルートディレクトリにして git で管理するのがオススメです。
 
 `wordmove` が使用できる環境であれば `wordmove` でのデプロイを推奨します。
 Docker でローカルサーバーが動いている状態ならばサーバー経由で `wordmove` コマンドを使用することができます。
 
 `Movefile` を本番環境に合わせて編集し、ご利用ください。
 
+SSH を使用する場合は `docker/php-fpm` ディレクトリに鍵ファイルを `id_rsa` にリネームして配置してください。
+
 ```sh
-yarn wordmove push --all
+npm run login
+cd ~
+wordmove push --all -e staging
+```
+
+`Movefile` を編集した場合はサーバーを再起動してください。変更が反映されます。
+
+```sh
+npm run serve-restart
 ```

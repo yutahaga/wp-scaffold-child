@@ -1,6 +1,9 @@
+global:
+  sql_adapter: "default"
+
 local:
   vhost: "http://localhost:8080"
-  wordpress_path: "/var/www/html"
+  wordpress_path: "/var/www/html/wp"
 
   database:
     name: "wordpress"
@@ -9,17 +12,17 @@ local:
     host: "db"
     charset: "utf8"
 
-production:
-  vhost: "http://example.com"
-  wordpress_path: "/var/www/html"
+staging:
+  vhost: "https://test.example.com"
+  wordpress_path: "/home/user/example.com/public_html/test"
 
   database:
-    name: "database_name"
-    user: "user"
+    name: "db_name"
+    user: "user_name"
     password: "password"
-    host: "host"
-    # port: "3306" # Use just in case you have exotic server config
-    # mysqldump_options: "--max_allowed_packet=50MB" # Only available if using SSH
+    host: "localhost"
+    port: "3306"
+    mysqldump_options: "--max_allowed_packet=50MB"
 
   exclude:
     - ".git/"
@@ -30,9 +33,38 @@ production:
     - "Gemfile*"
     - "Movefile"
     - "wp-content/*.sql"
+    - "wp-config.php"
+    - ".htaccess"
 
   ssh:
-    host: "host"
+    host: "example.com"
     user: "user"
-    # port: 22
-    # rsync_options: --verbose
+    port: 22
+
+production:
+  vhost: "https://example.com"
+  wordpress_path: "/home/user/example.com/public_html/wp"
+
+  database:
+    name: "db_name"
+    user: "user_name"
+    password: "password"
+    host: "localhost"
+    port: "3306"
+    mysqldump_options: "--max_allowed_packet=50MB"
+
+  exclude:
+    - ".git/"
+    - ".gitignore"
+    - ".sass-cache/"
+    - "bin/"
+    - "tmp/*"
+    - "Gemfile*"
+    - "Movefile"
+    - "wp-content/*.sql"
+    - "wp-config.php"
+
+  ssh:
+    host: "example.com"
+    user: "user"
+    port: 22

@@ -14,7 +14,7 @@ var config = {
   sourceMap: !isProduction,
   gzip: isProduction,
   gzipExtensions: ['js', 'css'],
-  bundleAnalyzerReport: true,
+  bundleAnalyzerReport: false,
   host: 'localhost',
   port: 3000,
   proxy: 'localhost:8080',
